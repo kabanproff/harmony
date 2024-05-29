@@ -1,0 +1,32 @@
+@font-face {
+    font-display: swap;
+    font-family: 'FuturaDemiC';
+    font-style: normal;
+    font-weight: 400;
+    src: local('FuturaDemiC'),
+    url('../fonts/FuturaDemiC.woff2') format('woff2'),
+    url('../fonts/FuturaDemiC.woff') format('woff'),
+    url('../fonts/FuturaDemiC.ttf')  format('truetype')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'DrukWideBold';
+    font-style: normal;
+    font-weight: 400;
+    src: local('DrukWideBold'),
+    url('../fonts/DrukWideBold.woff2') format('woff2'),
+    url('../fonts/DrukWideBold.woff') format('woff'),
+    url('../fonts/DrukWideBold.ttf')  format('truetype')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'FuturaBookC';
+    font-style: normal;
+    font-weight: 400;
+    src: local('FuturaBookC'),
+    url('../fonts/FuturaBookC.woff2') format('woff2'),
+    url('../fonts/FuturaBookC.woff') format('woff'),
+    url('../fonts/FuturaBookC.ttf')  format('truetype')
+}
