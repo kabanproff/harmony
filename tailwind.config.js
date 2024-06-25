@@ -4,29 +4,43 @@ export default {
   theme: {
     container: {
       center: true,
+      padding: '10px',
+      screens: {
+        xl: '1220px',
+      },
       // padding: '2rem',
       // screens: {
       //   'xl': '1200px',
       // },
     },
+    // fontSize: {
+    //   base: '16px',
+    // },
+    fontFamily: {
+      'zilla': ['Zilla Slab'],
+      'playfair': ['Playfair Display'],
+    },
     extend: {
       colors: {
-        grey: {
-          dark: "#333",
-          light: "#444"
+        gray: {
+          dark: 'var(--color-gray-dark)',
+          light: 'var(--color-gray-light)',
         },
         green: {
           dark: "#425A20",
           light: "#597D4E",
         }
+      },
+      gridTemplateRows: {
+        layout: 'auto 1fr auto',
+      },
+      fontSize: {
+        base: '16px',
       }
     },
   },
   plugins: [],
 }
-
-
-
 
 
 const example = {

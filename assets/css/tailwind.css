@@ -3,15 +3,20 @@
 @tailwind utilities;
 
 
-
 @layer base {
+
+  :root {
+    --color-gray-light: 61 61 61;
+    --color-gray-dark: 51 51 51;
+  }
+
   * {
-    @apply border-border;
+    /*@apply border-border;*/
   }
 
   body {
-    /*@apply bg-background text-foreground text-base;*/
-    /*font-family: 'Lato', sans-serif;*/
+    @apply text-base;
+    font-family: 'FuturaBookC', sans-serif;
   }
 }
 

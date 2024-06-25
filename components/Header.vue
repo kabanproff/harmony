@@ -3,200 +3,86 @@
 </script>
 
 <template>
-  <header class="bg-white">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
-        <a href="/" class="-m-1.5 p-1.5">
-          <span class="sr-only">AR.CHI</span>
-          <NuxtImg src="/logo.svg" class="h-8 w-auto"/>
-        </a>
-        <div class="lang flex justify-between">
-
-        </div>
-      </div>
-      <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-          <span class="sr-only">Open main menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
-      </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <div class="relative">
-          <button type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
-            Product
-            <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-            </svg>
-          </button>
-
-          <!--
-            'Product' flyout menu, show/hide based on flyout menu state.
-
-            Entering: "transition ease-out duration-200"
-              From: "opacity-0 translate-y-1"
-              To: "opacity-100 translate-y-0"
-            Leaving: "transition ease-in duration-150"
-              From: "opacity-100 translate-y-0"
-              To: "opacity-0 translate-y-1"
-          -->
-          <div class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-            <div class="p-4">
-              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-                  </svg>
-                </div>
-                <div class="flex-auto">
-                  <a href="#" class="block font-semibold text-gray-900">
-                    Analytics
-                    <span class="absolute inset-0"></span>
-                  </a>
-                  <p class="mt-1 text-gray-600">Get a better understanding of your traffic</p>
-                </div>
-              </div>
-              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
-                  </svg>
-                </div>
-                <div class="flex-auto">
-                  <a href="#" class="block font-semibold text-gray-900">
-                    Engagement
-                    <span class="absolute inset-0"></span>
-                  </a>
-                  <p class="mt-1 text-gray-600">Speak directly to your customers</p>
-                </div>
-              </div>
-              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
-                  </svg>
-                </div>
-                <div class="flex-auto">
-                  <a href="#" class="block font-semibold text-gray-900">
-                    Security
-                    <span class="absolute inset-0"></span>
-                  </a>
-                  <p class="mt-1 text-gray-600">Your customers’ data will be safe and secure</p>
-                </div>
-              </div>
-              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
-                  </svg>
-                </div>
-                <div class="flex-auto">
-                  <a href="#" class="block font-semibold text-gray-900">
-                    Integrations
-                    <span class="absolute inset-0"></span>
-                  </a>
-                  <p class="mt-1 text-gray-600">Connect with third-party tools</p>
-                </div>
-              </div>
-              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                  </svg>
-                </div>
-                <div class="flex-auto">
-                  <a href="#" class="block font-semibold text-gray-900">
-                    Automations
-                    <span class="absolute inset-0"></span>
-                  </a>
-                  <p class="mt-1 text-gray-600">Build strategic funnels that will convert</p>
-                </div>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-              <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
-                <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z" clip-rule="evenodd" />
-                </svg>
-                Watch demo
-              </a>
-              <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
-                <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
-                </svg>
-                Contact sales
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
-      </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </nav>
-    <!-- Mobile menu, show/hide based on menu open state. -->
-    <div class="lg:hidden" role="dialog" aria-modal="true">
-      <!-- Background backdrop, show/hide based on slide-over state. -->
-      <div class="fixed inset-0 z-10"></div>
-      <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-        <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-          </a>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Close menu</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <div class="-mx-3">
-                <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" aria-controls="disclosure-1" aria-expanded="false">
-                  Product
-                  <!--
-                    Expand/collapse icon, toggle classes based on menu open state.
-
-                    Open: "rotate-180", Closed: ""
-                  -->
-                  <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                  </svg>
-                </button>
-                <!-- 'Product' sub-menu, show/hide based on menu state. -->
-                <div class="mt-2 space-y-2" id="disclosure-1">
-                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Analytics</a>
-                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Engagement</a>
-                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Security</a>
-                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Integrations</a>
-                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Automations</a>
-                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Watch demo</a>
-                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact sales</a>
-                </div>
-              </div>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
-            </div>
-            <div class="py-6">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-            </div>
-          </div>
-        </div>
+  <header class="header py-[34px]">
+    <div class="flex justify-between items-end gap-[35px] ">
+      <a href="/" class="logo block ml-[-2px] mr-[4px] mb-[1px]">
+        <span class="sr-only">AR.CHI</span>
+        <svg width="84" height="19" viewBox="0 0 84 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M15.664 15.984C15.872 16.512 16.112 16.896 16.384 17.136C16.656 17.376 16.92 17.504 17.176 17.52V18C16.216 17.952 15 17.928 13.528 17.928C11.896 17.928 10.68 17.952 9.88 18V17.52C10.488 17.488 10.92 17.416 11.176 17.304C11.432 17.176 11.56 16.96 11.56 16.656C11.56 16.368 11.464 15.984 11.272 15.504L9.832 11.568H4.6L3.976 13.224C3.528 14.376 3.304 15.264 3.304 15.888C3.304 16.48 3.48 16.896 3.832 17.136C4.2 17.36 4.736 17.488 5.44 17.52V18C4.352 17.952 3.36 17.928 2.464 17.928C1.728 17.928 1.12 17.952 0.64 18V17.52C1.424 17.376 2.112 16.536 2.704 15L8.176 0.959999C8.352 0.975999 8.632 0.983999 9.016 0.983999C9.4 0.983999 9.672 0.975999 9.832 0.959999L15.664 15.984ZM9.664 11.088L7.288 4.608L4.792 11.088H9.664ZM33.6271 16.944C33.1951 17.44 32.7311 17.792 32.2351 18C31.7391 18.224 31.1391 18.336 30.4351 18.336C29.5071 18.336 28.7711 18.144 28.2271 17.76C27.6991 17.36 27.3551 16.688 27.1951 15.744L26.7631 13.344C26.5551 12.176 26.2991 11.32 25.9951 10.776C25.7071 10.216 25.2191 9.936 24.5311 9.936H22.9711V15.456C22.9711 16.064 23.0111 16.504 23.0911 16.776C23.1871 17.048 23.3551 17.232 23.5951 17.328C23.8351 17.424 24.2271 17.488 24.7711 17.52V18C23.9071 17.952 22.6991 17.928 21.1471 17.928C19.4351 17.928 18.1711 17.952 17.3551 18V17.52C17.8831 17.488 18.2671 17.424 18.5071 17.328C18.7631 17.232 18.9311 17.048 19.0111 16.776C19.1071 16.504 19.1551 16.064 19.1551 15.456V3.552C19.1551 2.944 19.1071 2.504 19.0111 2.232C18.9311 1.96 18.7631 1.776 18.5071 1.68C18.2671 1.584 17.8831 1.52 17.3551 1.488V1.008C18.1711 1.056 19.3871 1.08 21.0031 1.08L23.6671 1.056C23.9871 1.04 24.3551 1.032 24.7711 1.032C26.9791 1.032 28.6351 1.392 29.7391 2.112C30.8591 2.832 31.4191 3.864 31.4191 5.208C31.4191 6.344 31.0031 7.344 30.1711 8.208C29.3391 9.072 27.9631 9.616 26.0431 9.84C27.4831 9.968 28.5551 10.28 29.2591 10.776C29.9631 11.272 30.4191 12.016 30.6271 13.008L31.1791 15.48C31.3071 16.12 31.4511 16.568 31.6111 16.824C31.7871 17.08 32.0271 17.208 32.3311 17.208C32.5231 17.192 32.6831 17.144 32.8111 17.064C32.9551 16.984 33.1151 16.848 33.2911 16.656L33.6271 16.944ZM24.4591 1.488C24.0271 1.488 23.7071 1.544 23.4991 1.656C23.3071 1.768 23.1711 1.968 23.0911 2.256C23.0111 2.544 22.9711 2.976 22.9711 3.552V9.456H24.0031C25.3151 9.456 26.2111 9.112 26.6911 8.424C27.1871 7.72 27.4351 6.736 27.4351 5.472C27.4351 4.16 27.2031 3.168 26.7391 2.496C26.2751 1.824 25.5151 1.488 24.4591 1.488ZM36.3963 14.64C37.0203 14.64 37.5163 14.808 37.8843 15.144C38.2523 15.464 38.4363 15.912 38.4363 16.488C38.4363 17.064 38.2523 17.52 37.8843 17.856C37.5163 18.176 37.0203 18.336 36.3963 18.336C35.7723 18.336 35.2763 18.176 34.9083 17.856C34.5403 17.52 34.3563 17.064 34.3563 16.488C34.3563 15.912 34.5403 15.464 34.9083 15.144C35.2763 14.808 35.7723 14.64 36.3963 14.64ZM48.9186 0.671999C49.8786 0.671999 50.6946 0.807999 51.3666 1.08C52.0386 1.352 52.6946 1.736 53.3346 2.232C53.5106 2.376 53.6626 2.448 53.7906 2.448C54.1106 2.448 54.3186 1.968 54.4146 1.008H54.9666C54.9026 2.096 54.8706 4.032 54.8706 6.816H54.3186C54.1746 5.632 53.9826 4.728 53.7426 4.104C53.5026 3.48 53.0946 2.936 52.5186 2.472C52.1186 2.088 51.6546 1.8 51.1266 1.608C50.5986 1.4 50.0466 1.296 49.4706 1.296C47.8546 1.296 46.6546 2.088 45.8706 3.672C45.0866 5.24 44.6946 7.2 44.6946 9.552C44.6946 11.888 45.1026 13.84 45.9186 15.408C46.7346 16.976 47.9506 17.76 49.5666 17.76C50.1106 17.76 50.6466 17.664 51.1746 17.472C51.7186 17.264 52.1746 16.968 52.5426 16.584C53.1346 16.136 53.5426 15.576 53.7666 14.904C54.0066 14.232 54.1906 13.248 54.3186 11.952H54.8706C54.8706 14.848 54.9026 16.864 54.9666 18H54.4146C54.3666 17.488 54.2946 17.128 54.1986 16.92C54.1186 16.696 53.9986 16.584 53.8386 16.584C53.7106 16.584 53.5426 16.648 53.3346 16.776C52.6146 17.288 51.9266 17.68 51.2706 17.952C50.6146 18.208 49.8226 18.336 48.8946 18.336C47.1986 18.336 45.7106 17.992 44.4306 17.304C43.1666 16.616 42.1826 15.624 41.4786 14.328C40.7746 13.016 40.4226 11.456 40.4226 9.648C40.4226 7.888 40.7826 6.328 41.5026 4.968C42.2226 3.608 43.2226 2.552 44.5026 1.8C45.7986 1.048 47.2706 0.671999 48.9186 0.671999ZM74.7205 1.488C74.1765 1.52 73.7845 1.584 73.5445 1.68C73.3045 1.776 73.1365 1.96 73.0405 2.232C72.9605 2.504 72.9205 2.944 72.9205 3.552V15.456C72.9205 16.064 72.9605 16.504 73.0405 16.776C73.1365 17.048 73.3045 17.232 73.5445 17.328C73.7845 17.424 74.1765 17.488 74.7205 17.52V18C73.9365 17.952 72.7205 17.928 71.0725 17.928C69.4565 17.928 68.2005 17.952 67.3045 18V17.52C67.8325 17.488 68.2165 17.424 68.4565 17.328C68.7125 17.232 68.8805 17.048 68.9605 16.776C69.0565 16.504 69.1045 16.064 69.1045 15.456V9.696H62.7445V15.456C62.7445 16.064 62.7845 16.504 62.8645 16.776C62.9605 17.048 63.1285 17.232 63.3685 17.328C63.6085 17.424 64.0005 17.488 64.5445 17.52V18C63.6805 17.952 62.4725 17.928 60.9205 17.928C59.2085 17.928 57.9445 17.952 57.1285 18V17.52C57.6565 17.488 58.0405 17.424 58.2805 17.328C58.5365 17.232 58.7045 17.048 58.7845 16.776C58.8805 16.504 58.9285 16.064 58.9285 15.456V3.552C58.9285 2.944 58.8805 2.504 58.7845 2.232C58.7045 1.96 58.5365 1.776 58.2805 1.68C58.0405 1.584 57.6565 1.52 57.1285 1.488V1.008C57.9445 1.056 59.2085 1.08 60.9205 1.08C62.4725 1.08 63.6805 1.056 64.5445 1.008V1.488C64.0005 1.52 63.6085 1.584 63.3685 1.68C63.1285 1.776 62.9605 1.96 62.8645 2.232C62.7845 2.504 62.7445 2.944 62.7445 3.552V9.216H69.1045V3.552C69.1045 2.944 69.0565 2.504 68.9605 2.232C68.8805 1.96 68.7125 1.776 68.4565 1.68C68.2165 1.584 67.8325 1.52 67.3045 1.488V1.008C68.2005 1.056 69.4565 1.08 71.0725 1.08C72.7205 1.08 73.9365 1.056 74.7205 1.008V1.488ZM83.7398 1.488C83.1958 1.52 82.8038 1.584 82.5638 1.68C82.3238 1.776 82.1558 1.96 82.0598 2.232C81.9798 2.504 81.9398 2.944 81.9398 3.552V15.456C81.9398 16.064 81.9798 16.504 82.0598 16.776C82.1558 17.048 82.3238 17.232 82.5638 17.328C82.8038 17.424 83.1958 17.488 83.7398 17.52V18C82.8758 17.952 81.6678 17.928 80.1158 17.928C78.4038 17.928 77.1398 17.952 76.3238 18V17.52C76.8518 17.488 77.2358 17.424 77.4758 17.328C77.7318 17.232 77.8998 17.048 77.9798 16.776C78.0758 16.504 78.1238 16.064 78.1238 15.456V3.552C78.1238 2.944 78.0758 2.504 77.9798 2.232C77.8998 1.96 77.7318 1.776 77.4758 1.68C77.2358 1.584 76.8518 1.52 76.3238 1.488V1.008C77.1398 1.056 78.4038 1.08 80.1158 1.08C81.6678 1.08 82.8758 1.056 83.7398 1.008V1.488Z"
+            fill="#444444"/>
+        </svg>
+      </a>
+      <div class="h-devider"/>
+      <div class="lang space-x-[15px]">
+        <button class="lang-btn">RUS</button>
+        <!--        1.17-->
+        <button class="lang-btn active">ENG</button>
       </div>
     </div>
+    <div class="flex justify-end items-center flex-grow relative top-[1px]">
+      <nav class="mr-[34px]">
+        <ul class="flex justify-between items-center gap-[30px]">
+          <li><a class="px-[5px]" href="#">About us</a></li>
+          <li><a class="px-[5px]" href="#">Architecture</a></li>
+          <li><a class="px-[5px]" href="#">Interior</a></li>
+          <li><a class="px-[5px]" href="#">Contact</a></li>
+          <li><a class="px-[5px]" href="#">Shop</a></li>
+        </ul>
+      </nav>
+      <div class="h-devider"/>
+      <button class="search mx-[20px]">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_0_24)">
+            <path
+              d="M19.8248 18.98L14.9645 14.1197C16.2683 12.6208 17.0576 10.6652 17.0576 8.52772C17.0576 3.82262 13.2306 0 8.52994 0C3.82484 0 0.00222778 3.82705 0.00222778 8.52772C0.00222778 13.2284 3.82928 17.0554 8.52994 17.0554C10.6674 17.0554 12.6231 16.2661 14.122 14.9623L18.9823 19.8226C19.0976 19.9379 19.2528 20 19.4035 20C19.5543 20 19.7095 19.9424 19.8248 19.8226C20.0554 19.592 20.0554 19.2106 19.8248 18.98ZM1.19513 8.52772C1.19513 4.48337 4.48559 1.19734 8.5255 1.19734C12.5698 1.19734 15.8559 4.4878 15.8559 8.52772C15.8559 12.5676 12.5698 15.8625 8.5255 15.8625C4.48559 15.8625 1.19513 12.5721 1.19513 8.52772Z"
+              fill="#444444"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_0_24">
+              <rect width="20" height="20" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+      <div class="h-devider"/>
+      <button class="burg ml-[40px]">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0.812479 8.12499H25.1875C25.636 8.12499 25.9999 7.76096 25.9999 7.31251C25.9999 6.86399 25.6359 6.50003 25.1875 6.50003H0.812479C0.363961 6.50003 0 6.86406 0 7.31251C0 7.76096 0.364028 8.12499 0.812479 8.12499Z"
+            fill="#444444"/>
+          <path
+            d="M25.1875 12.1875H0.812479C0.363961 12.1875 0 12.5516 0 13C0 13.4484 0.364028 13.8125 0.812479 13.8125H25.1875C25.636 13.8125 25.9999 13.4484 25.9999 13C25.9999 12.5516 25.636 12.1875 25.1875 12.1875Z"
+            fill="#444444"/>
+          <path
+            d="M25.1875 17.875H8.93748C8.48896 17.875 8.125 18.239 8.125 18.6875C8.125 19.136 8.48903 19.5 8.93748 19.5H25.1875C25.636 19.5 25.9999 19.1359 25.9999 18.6875C26 18.239 25.636 17.875 25.1875 17.875Z"
+            fill="#444444"/>
+        </svg>
+      </button>
+    </div>
+
+
   </header>
 </template>
 
-<style>
+<style lang="postcss">
+.header {
+  line-height: 1.17;
+  font-family: 'FuturaDemiC', sans-serif;
+  @apply flex justify-between text-gray-dark;
+}
+
+.lang-btn {
+  @apply rounded text-gray-light bg-transparent px-1.5 pt-[6px] pb-[3px] inline-block;
+}
+
+.lang-btn.active {
+  //background-color: #E2E5DF;
+  @apply text-gray-dark mt-[-2px];
+}
+
+.h-devider {
+  @apply w-px bg-black self-stretch my-[5px] min-h-[19px];
+}
 
 </style>

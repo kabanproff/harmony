@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout>
-    NuxtWelcome
   </NuxtLayout>
 </template>
+<script setup>
+</script>
