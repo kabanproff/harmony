@@ -1,10 +1,20 @@
 <script lang="ts" setup>
+const emit = defineEmits<{
+  (e: 'handlerMenuOpen')
+}>();
+const props = defineProps<{
+  isOpened: boolean
+}>()
+const clickButton = () => {
+  emit('handlerMenuOpen')
+};
+
 
 </script>
 
 <template>
   <header class="header py-[34px]">
-    <div class="flex justify-between items-end gap-[35px] ">
+    <div class="z-20 flex justify-between items-end gap-[35px] ">
       <a href="/" class="logo block ml-[-2px] mr-[4px] mb-[1px]">
         <span class="sr-only">AR.CHI</span>
         <svg width="84" height="19" viewBox="0 0 84 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,11 +24,7 @@
         </svg>
       </a>
       <div class="h-devider"/>
-      <div class="lang space-x-[15px]">
-        <button class="lang-btn">RUS</button>
-        <!--        1.17-->
-        <button class="lang-btn active">ENG</button>
-      </div>
+      <Lang/>
     </div>
     <div class="flex justify-end items-center flex-grow relative top-[1px]">
       <nav class="mr-[34px]">
@@ -46,22 +52,46 @@
         </svg>
       </button>
       <div class="h-devider"/>
-      <button class="burg ml-[40px]">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0.812479 8.12499H25.1875C25.636 8.12499 25.9999 7.76096 25.9999 7.31251C25.9999 6.86399 25.6359 6.50003 25.1875 6.50003H0.812479C0.363961 6.50003 0 6.86406 0 7.31251C0 7.76096 0.364028 8.12499 0.812479 8.12499Z"
-            fill="#444444"/>
-          <path
-            d="M25.1875 12.1875H0.812479C0.363961 12.1875 0 12.5516 0 13C0 13.4484 0.364028 13.8125 0.812479 13.8125H25.1875C25.636 13.8125 25.9999 13.4484 25.9999 13C25.9999 12.5516 25.636 12.1875 25.1875 12.1875Z"
-            fill="#444444"/>
-          <path
-            d="M25.1875 17.875H8.93748C8.48896 17.875 8.125 18.239 8.125 18.6875C8.125 19.136 8.48903 19.5 8.93748 19.5H25.1875C25.636 19.5 25.9999 19.1359 25.9999 18.6875C26 18.239 25.636 17.875 25.1875 17.875Z"
-            fill="#444444"/>
-        </svg>
-      </button>
+
+      <button
+        class="burg z-[11] ml-[38px] flex items-center relative top-[2px]"
+        :class="isOpened ? 'active gap-[8px]' : ''"
+        @click.prevent="clickButton"
+      >
+        <span v-if="isOpened">Close</span>
+        <div class="burg__icon"><span></span></div>
+         </button>
     </div>
+    <div
+      :class="!isOpened && '-translate-x-full'"
+      class="popup max-h-screen py-[100px] flex items-center justify-center transition-transform duration-300 z-10 bg-cover bg-no-repeat bg-center bg-fixed absolute left-0 top-0 bg-amber-300 bg-bg-menu h-screen w-screen"
+    >
+      <nav class="flex h-full overflow-y-auto nav-menu pr-[19px] text-5xl font-playfair capitalize">
+        <ul class="flex flex-col items-center gap-y-[55px] my-auto">
+          <li>
+            <a class="nav-menu__link text-gray-lighten opacity-50" href="#">About us</a>
+            <img alt="img menu" class="b-image absolute top-[6vw] left-[10vw]" src="public/images/architecture.png"/>
+          </li>
+          <li>
+            <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Interior</a>
+            <img alt="img menu" class="b-image absolute top-[11vw] right-[10vw]" src="public/images/interior.png"/>
+          </li>
+          <li>
+            <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Architecture</a>
+            <img alt="img menu" class="b-image absolute top-[16vw] left-[15vw]" src="public/images/architecture.png"/>
+          </li>
+          <li>
+            <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Portfolio</a>
+            <img alt="img menu" class="b-image absolute top-[24vw] right-[15vw]" src="public/images/interior.png"/>
+          </li>
+          <li>
+            <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Contact</a>
+            <img alt="img menu" class="b-image absolute top-[34vw] left-[12vw]" src="public/images/architecture.png"/>
+          </li>
 
-
+        </ul>
+      </nav>
+    </div>
   </header>
 </template>
 
@@ -72,17 +102,102 @@
   @apply flex justify-between text-gray-dark;
 }
 
-.lang-btn {
-  @apply rounded text-gray-light bg-transparent px-1.5 pt-[6px] pb-[3px] inline-block;
-}
-
-.lang-btn.active {
-  //background-color: #E2E5DF;
-  @apply text-gray-dark mt-[-2px];
-}
-
 .h-devider {
   @apply w-px bg-black self-stretch my-[5px] min-h-[19px];
+}
+
+.burg__icon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+
+  span {
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  span,
+  span::before,
+  span::after {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #000;
+    transition-property: background-color, transform;
+    transition-duration: 0.3s;
+  }
+
+  span::before,
+  span::after {
+    position: absolute;
+    content: "";
+  }
+
+  span::before {
+    top: -6px;
+  }
+
+  span::after {
+    transition: width .3s ease-in-out;
+    top: 6px;
+    width: 20px;
+    right: 0;
+  }
+}
+
+:not(.active).burg:hover {
+
+  .burg__icon span::after {
+    width: 100%;
+  }
+}
+
+.active.burg {
+
+  .burg__icon {
+
+    span {
+      background-color: transparent;
+    }
+
+    span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    span::after {
+      transform: translateY(-6px) rotate(-45deg);
+      width: 100%;
+    }
+  }
+
+
+  &:hover {
+
+    .burg__icon {
+
+      span::before {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      span::after {
+        transform: translateY(-8px) rotate(-45deg);
+        width: 100%;
+      }
+    }
+
+  }
+}
+
+.nav-menu__link:hover + .b-image {
+  opacity: 1;
+}
+
+.b-image {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
 
 </style>

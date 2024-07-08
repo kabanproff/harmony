@@ -6,6 +6,7 @@
 @layer base {
 
   :root {
+    --color-gray-lighten: 68 68 68;
     --color-gray-light: 61 61 61;
     --color-gray-dark: 51 51 51;
   }
@@ -17,6 +18,10 @@
   body {
     @apply text-base;
     font-family: 'FuturaBookC', sans-serif;
+  }
+
+  a {
+    @apply hover:text-green-dark hover:opacity-100;
   }
 }
 

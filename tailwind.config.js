@@ -16,6 +16,9 @@ export default {
     // fontSize: {
     //   base: '16px',
     // },
+    backgroundImage: {
+      'bg-menu': "url('public/images/bg-menu.jpg')",
+    },
     fontFamily: {
       'zilla': ['Zilla Slab'],
       'playfair': ['Playfair Display'],
@@ -25,10 +28,12 @@ export default {
         gray: {
           dark: 'var(--color-gray-dark)',
           light: 'var(--color-gray-light)',
+          lighten: 'var(--color-gray-lighten)',
         },
         green: {
           dark: "#425A20",
           light: "#597D4E",
+          gray: "#444444"
         }
       },
       gridTemplateRows: {
