@@ -39,7 +39,7 @@ jobs:
     # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
       - run: echo "🐧 This environment 'steps.deployment.outputs.page_url' -' ${{ steps.deployment.outputs.page_url }}"
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
