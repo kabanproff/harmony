@@ -86,7 +86,7 @@ const clickButton = () => {
           </li>
           <li>
             <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Contact</a>
-            <img alt="img menu" class="b-image absolute top-[34vw] left-[12vw]" src="public/images/architecture.png"/>
+            <img alt="img menu" class="b-image absolute bottom-[3vw] left-[12vw]" src="public/images/architecture.png"/>
           </li>
         </ul>
       </nav>
