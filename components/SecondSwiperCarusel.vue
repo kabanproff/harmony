@@ -2,11 +2,10 @@
 import { Controller, Parallax } from "swiper/modules";
 import type Swiper from "swiper";
 
-const props = defineProps<{ modelValue: object | null, firstSwiper: Swiper | null}>();
+defineProps<{ modelValue: object | null, firstSwiper: Swiper | null}>();
 const emit = defineEmits<{
   (e: 'update:modelValue', sw: Swiper | null): void
 }>()
-// console.log('props', props)
 
 const arr = [
   'Harmony',
@@ -20,13 +19,9 @@ const onSwiper = (swiper) => {
   emit('update:modelValue', swiper)
 };
 
-onUpdated(() => {
-  // console.log("upd props", props)
-})
-
 </script>
 <template>
-  <div class="banner">
+  <div class="banner mb-[20px] px-[12px]">
     <Swiper
       :modules="[SwiperAutoplay, Controller, Parallax]"
       :controller="{control: firstSwiper}"

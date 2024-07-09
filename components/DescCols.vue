@@ -11,18 +11,18 @@ const list = [
 ]
 </script>
 <template>
-  <div class="flex mb-11">
-    <div v-for="({title, text}, d) in list" :class="d%2 === 0 ? 'left-col' : 'right-col'">
-      <div class="h3 text-[18px] text-green-dark w-1/2">
+  <div class="flex gap-[60px] mb-[38px] px-[13px] font-demic">
+    <div v-for="({title, text}, d) in list" class="w-[284px]" :class="d%2 === 0 ? 'left-col' : 'right-col'">
+      <div class="h3 text-[18px] text-green-dark w-1/2 mb-[5px]">
         {{ title }}
       </div>
-      <div class="text text-[14px]">{{ text }}
+      <div class="text text-[14px] font-book leading-[18px]">{{ text }}
       </div>
     </div>
   </div>
-  <div class="flex p-2">
-    <a href="#" class="btn btn-primary">Read More</a>
-    <a href="#" class="btn group ml-5 relative pl-[25px] flex items-center">
+  <div class="flex p-2 font-demic">
+    <a href="#" class="btn btn-primary mr-[26px]">Read More</a>
+    <a href="#" class="btn group ml-5 relative pl-[24px] flex items-center">
       <svg class="group-hover:-rotate-12 absolute left-0 top-1/2 -translate-y-1/2 duration-300" width="16" height="18"
            viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -32,7 +32,6 @@ const list = [
       <svg class="-rotate-2 absolute left-0 top-[52%] -translate-y-1/2" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16.1787 5.56727C16.7243 5.75598 16.8611 6.46459 16.4248 6.84278L4.51779 17.1652C4.08155 17.5434 3.3995 17.3075 3.2901 16.7406L0.304156 1.26759C0.194759 0.700699 0.740062 0.227966 1.2857 0.416671L16.1787 5.56727Z" stroke="black" stroke-width="0.5"/>
       </svg>
-
       View project
     </a>
   </div>
@@ -44,7 +43,7 @@ const list = [
 }
 
 .btn-primary {
-  @apply text-white pr-[56px] pt-[19px] pb-[18px] pl-[57px] relative inline-block;
+  @apply text-white pr-[56px] pt-[12px] pb-[13px] pl-[57px] relative inline-block;
 
   &::before {
     content: '';

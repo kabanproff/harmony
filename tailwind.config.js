@@ -22,6 +22,8 @@ export default {
     fontFamily: {
       'zilla': ['Zilla Slab'],
       'playfair': ['Playfair Display'],
+      'demic': ['FuturaDemiC'],
+      'book': ['FuturaBookC'],
     },
     extend: {
       colors: {

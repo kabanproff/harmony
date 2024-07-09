@@ -38,7 +38,7 @@ watch(
       :secondSwiper="secondSwiper"
       :scrollBar="scrollBar"
     />
-    <div class="mt-auto overflow-hidden w-3/5 ">
+    <div class="mt-auto overflow-hidden w-3/5 mb-[128px] -mx-[10px]">
       <SecondSwiperCarusel
         v-model="secondSwiper"
         :firstSwiper="firstSwiper"

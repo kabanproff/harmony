@@ -11,10 +11,6 @@
     --color-gray-dark: 51 51 51;
   }
 
-  * {
-    /*@apply border-border;*/
-  }
-
   body {
     @apply text-base;
     font-family: 'FuturaBookC', sans-serif;

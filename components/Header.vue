@@ -13,7 +13,7 @@ const clickButton = () => {
 </script>
 
 <template>
-  <header class="header py-[34px]">
+  <header class="header pb-[34px] pt-[32px]">
     <div class="z-20 flex justify-between items-end gap-[35px] ">
       <a href="/" class="logo block ml-[-2px] mr-[4px] mb-[1px]">
         <span class="sr-only">AR.CHI</span>
@@ -26,8 +26,8 @@ const clickButton = () => {
       <div class="h-devider"/>
       <Lang/>
     </div>
-    <div class="flex justify-end items-center flex-grow relative top-[1px]">
-      <nav class="mr-[34px]">
+    <div class="flex justify-end items-center flex-grow relative top-[2px]">
+      <nav class="mr-[36px]">
         <ul class="flex justify-between items-center gap-[30px]">
           <li><a class="px-[5px]" href="#">About us</a></li>
           <li><a class="px-[5px]" href="#">Architecture</a></li>
@@ -54,7 +54,7 @@ const clickButton = () => {
       <div class="h-devider"/>
 
       <button
-        class="burg z-[11] ml-[38px] flex items-center relative top-[2px]"
+        class="burg z-[11] ml-[35px] flex items-center relative top-[2px] left-[2px]"
         :class="isOpened ? 'active gap-[8px]' : ''"
         @click.prevent="clickButton"
       >
