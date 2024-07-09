@@ -1,5 +1,5 @@
 # https://github.com/actions/deploy-pages#usage
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages edit
 env:
   NUXT_APP_BASE_URL: ${{secrets.NUXT_APP_BASE_URL}}
   NUXT_PUBLIC_SITE_URL: ${{secrets.NUXT_PUBLIC_SITE_URL}}
@@ -23,7 +23,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./.output/public
+          path: ./.output/public/harmony/
   # Deployment job
   deploy:
     # Add a dependency to the build job
