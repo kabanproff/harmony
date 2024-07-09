@@ -2,15 +2,15 @@
 import { Navigation, Pagination, EffectFade, Controller, Scrollbar } from "swiper/modules";
 import type Swiper from "swiper";
 
-const props = defineProps<{
+defineProps<{
   modelValue: object | null,
   secondSwiper: Swiper | null,
   scrollBar
 }>();
+
 const emit = defineEmits<{
   (e: 'update:modelValue', sw: Swiper | null): void
 }>()
-console.log('props fsw', props)
 
 const arr = [
   '/images/first-slide.png',
@@ -24,9 +24,6 @@ const onSwiper = (swiper) => {
   emit('update:modelValue', swiper)
 };
 import 'swiper/css/scrollbar';
-onUpdated(() => {
-  // console.log("upd props", props)
-})
 
 </script>
 <template>

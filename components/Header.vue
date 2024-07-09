@@ -64,9 +64,9 @@ const clickButton = () => {
     </div>
     <div
       :class="!isOpened && '-translate-x-full'"
-      class="popup max-h-screen py-[100px] flex items-center justify-center transition-transform duration-300 z-10 bg-cover bg-no-repeat bg-center bg-fixed absolute left-0 top-0 bg-amber-300 bg-bg-menu h-screen w-screen"
+      class="popup max-h-screen py-[100px] flex items-center justify-center transition-transform duration-300 z-10 bg-cover bg-no-repeat bg-center bg-fixed absolute left-0 top-0 bg-amber-300 bg-bg-menu h-full w-full overflow-hidden"
     >
-      <nav class="flex h-full overflow-y-auto nav-menu pr-[19px] text-5xl font-playfair capitalize">
+      <nav class="flex h-full overflow-y-auto nav-menu text-5xl font-playfair capitalize">
         <ul class="flex flex-col items-center gap-y-[55px] my-auto">
           <li>
             <a class="nav-menu__link text-gray-lighten opacity-50" href="#">About us</a>
@@ -74,11 +74,11 @@ const clickButton = () => {
           </li>
           <li>
             <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Interior</a>
-            <img alt="img menu" class="b-image absolute top-[11vw] right-[10vw]" src="public/images/interior.png"/>
+            <img alt="img menu" class="b-image absolute top-[19.5vw] right-[19.5vw]" src="public/images/interior.png"/>
           </li>
           <li>
             <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Architecture</a>
-            <img alt="img menu" class="b-image absolute top-[16vw] left-[15vw]" src="public/images/architecture.png"/>
+            <img alt="img menu" class="b-image absolute top-[23.3vw] left-[19.5vw]" src="public/images/architecture.png"/>
           </li>
           <li>
             <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Portfolio</a>
@@ -88,7 +88,6 @@ const clickButton = () => {
             <a class="nav-menu__link text-gray-lighten opacity-50" href="#">Contact</a>
             <img alt="img menu" class="b-image absolute top-[34vw] left-[12vw]" src="public/images/architecture.png"/>
           </li>
-
         </ul>
       </nav>
     </div>
