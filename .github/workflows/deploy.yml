@@ -23,7 +23,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./.output/public/harmony/
+          path: ./.output/public
   # Deployment job
   deploy:
     # Add a dependency to the build job
@@ -40,5 +40,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
+      - run: echo "🐧 This environment 'steps.deployment.outputs.page_url' -' ${{ steps.deployment.outputs.page_url }}"
         id: deployment
         uses: actions/deploy-pages@v1
